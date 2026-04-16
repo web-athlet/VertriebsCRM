@@ -1,0 +1,13 @@
+diff --git a/node_modules/@restart/ui/cjs/utils.js b/node_modules/@restart/ui/cjs/utils.js
+index e76454c..ff46981 100644
+--- a/node_modules/@restart/ui/cjs/utils.js
++++ b/node_modules/@restart/ui/cjs/utils.js
+@@ -25,6 +25,6 @@ function getChildRef(element) {
+   const {
+     major
+   } = getReactVersion();
+-  const childRef = major >= 19 ? element.props.ref : element.ref;
++  const childRef = (major >= 19 || (major === 18 && minor >= 3)) ? element.props.ref : element.ref;
+   return childRef;
+ }
+\ No newline at end of file
